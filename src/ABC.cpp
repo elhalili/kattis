@@ -37,10 +37,20 @@ int main() {
     //map every number to its caractere
     for (i = 0; i < 3; i++)
         arr[i] = {.n = tmp[i], .c = (a + i)};
+
+    //get the pattern 
+    char patt[4];
+    for (int i = 0; i < 3; i++)
+        cin >> patt[i];
+    
     //print the resault
     for (i = 0; i < 3; i++)
         for (int j = 0; j < 3; j++)
-            if(ABC[i] == arr[j].n) cout << arr[j].c;
-
+            if (patt[i] == arr[j].c)
+            {
+                cout << arr[j].n << " ";
+                j = 4;
+            }
+            
     return 0;
 }
